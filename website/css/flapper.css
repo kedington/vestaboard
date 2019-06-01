@@ -262,14 +262,14 @@
 /* DARK (default) */
 
 .flapper .digit {
-    background-color: #222;
-    border: 1px solid #333;
+    background-color: black;
+    border: 1px solid black;
 }
 
 .flapper .digit div {
     color: #f0f0f0;
     padding: 0px;
-    background-color: black;
+    background-color: rgb(37, 39, 41);
 }
 
 /* LIGHT */

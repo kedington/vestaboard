@@ -1,5 +1,7 @@
 from datetime import datetime
 
+board_height = 7
+board_width = 23
 colon = set([(10,1), (11,1), (12,1), (10,2), (11,2), (12,2), (10,4), (11,4), (12,4), (10,5), (11,5), (12, 5)])
 
 # Get the current time and the 4 digits to display
@@ -30,9 +32,9 @@ points = points.union(colon)
 
 board = []
 
-for y in range(7):
+for y in range(board_height):
         inner = []
-        for x in range(23):
+        for x in range(board_width):
                 if (x,y) in points:
                         inner.append('0')
                 else:

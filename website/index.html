@@ -7,19 +7,44 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script src="src/jquery.flapper.js"></script>
         <script language="javascript">
+			let board_height = 7
+			let board_width = 23
+
+			function chunk(input) {
+				console.log('test')
+				var start = 0
+				var chunk_list = []
+				while (input.slice(start, start+board_width)) {
+					chunk_list.push(input.slice(start, start+board_width))
+					start += board_width
+				}
+				console.log(chunk_list)
+				return chunk_list
+			}
+
+			function write_board(board, input) {
+				for (const [index, element] of chunk(input).entries()) {
+					board[index].val(element).change();
+				}
+			}
+
+
             $(document).ready(function() {
-				let board_height = 7
-				let board_width = 23
 				var i;
+				var board_array = []
 				for (i = 1; i <= board_height; i++) { 
                 	var $header_display = $('#header_display' + i);
 					$header_display.flapper({
 						width: board_width,
 						chars_preset: 'alphanum',
+						align: 'left'
 					});
-					$header_display.val('HELLO').change();
+					board_array.push($header_display)
 				}
+				console.log('test')
+				write_board(board_array, "HEY WELCOME TO MY VESTABOARD DEMO WEBSITE")
             });
+
         </script>
     </head>
     <body>

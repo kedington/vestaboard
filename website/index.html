@@ -11,7 +11,6 @@
 			let board_width = 23
 
 			function chunk(input) {
-				console.log('test')
 				var start = 0
 				var chunk_list = []
 				while (input.slice(start, start+board_width)) {
@@ -28,10 +27,15 @@
 				}
 			}
 
+			function write_board_array(board, array) {
+				for (const [index, element] of array.entries()) {
+					board[index].val(element.join('')).change();
+				}
+			}
 
             $(document).ready(function() {
 				var i;
-				var board_array = []
+				var board_array = [];
 				for (i = 1; i <= board_height; i++) { 
                 	var $header_display = $('#header_display' + i);
 					$header_display.flapper({

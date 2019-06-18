@@ -22,7 +22,7 @@
 			}
 
 			function write_board(board, input) {
-				for (const [index, element] of chunk(input).entries()) {
+				for (const [index, element] of chunk(input.toUpperCase()).entries()) {
 					board[index].val(element).change();
 				}
 			}
@@ -45,8 +45,13 @@
 					});
 					board_array.push($header_display)
 				}
-				console.log('test')
-				write_board(board_array, "HEY WELCOME TO MY VESTABOARD DEMO WEBSITE")
+				var url = window.location.href.split('?');
+				console.log(url)
+				if (url.length <= 1) {
+					write_board(board_array, "HEY WELCOME TO MY VESTABOARD DEMO WEBSITE");
+				} else {
+					write_board(board_array, decodeURIComponent(url[1]));
+				}
             });
 
         </script>

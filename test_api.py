@@ -1,6 +1,7 @@
 import json
 import requests
 
+# https://docs.vestaboard.com/methods
 board_id = "a91c3c15-2d5b-4167-aa65-192f7ccb3b45"
 url = "https://platform.vestaboard.com/subscriptions/{}/message".format(board_id)
 

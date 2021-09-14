@@ -1,6 +1,6 @@
 from datetime import datetime
 from vestaboard import board_height, board_width
-from test_api import update_text
+from test_api import update_board
 
 # Get the current time and the 4 digits to display
 now = datetime.now()
@@ -37,13 +37,9 @@ for y in range(board_height):
         inner = []
         for x in range(board_width):
                 if (x,y) in points:
-                        inner.append('{69}')
+                        inner.append(69)
                 else:
-                        inner.append('{62}')
+                        inner.append(0)
         board.append(inner)
 
-text = ''
-for row in board:
-        text += ''.join(row)
-
-update_text(text)
+update_board(board)

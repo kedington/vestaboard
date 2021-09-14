@@ -22,3 +22,12 @@ def update_text(message):
 
     print(response.text)
 
+
+def update_board(char_array):
+    body = {"characters": char_array} 
+
+    response = requests.request("POST", url, headers=headers, data=json.dumps(body))
+
+    print(response.text)
+
+
